@@ -1,6 +1,6 @@
 import React from 'react';
-import MapView from 'react-native-maps';
-import {StyleSheet, View} from 'react-native';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import {StyleSheet, View, Text} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,12 +12,18 @@ const styles = StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject,
   },
+  text: {
+    fontSize: 40,
+    color: 'red',
+    alignSelf: 'center',
+  }
 });
 
 export default () => (
   <View style={styles.container}>
+    <Text style={styles.text}>Hello Crow Fans!</Text>
     <MapView
-      // provider={PROVIDER_GOOGLE}
+      provider={PROVIDER_GOOGLE}
       style={styles.map}
       region={{
         latitude: 37.78825,
